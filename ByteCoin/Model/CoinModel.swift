@@ -9,13 +9,13 @@
 import Foundation
 
 struct CoinModel{
-    let base: String
-    let quote: String
+    let asset_id_base: String
+    let asset_id_quote: String
     let rate: Double
 }
 
 struct CoinData:Codable{
-    let base: String
-    let quote: String
+    let asset_id_base: String
+    let asset_id_quote: String
     let rate: Double
 }

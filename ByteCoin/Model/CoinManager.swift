@@ -50,12 +50,12 @@ struct CoinManager{
         let decoder = JSONDecoder()
         do{
             let decodedData = try decoder.decode(CoinData.self, from: coinData)
-            
-            let base = decodedData.base
-            let quote = decodedData.quote
+            print(decodedData.asset_id_base)
+            let base = decodedData.asset_id_base
+            let quote = decodedData.asset_id_quote
             let rate = decodedData.rate
             
-            let coin = CoinModel(base: base, quote: quote, rate: rate)
+            let coin = CoinModel(asset_id_base: base, asset_id_quote: quote, rate: rate)
             return coin
         }catch{
             delegate?.didFailWithError(error: error)
